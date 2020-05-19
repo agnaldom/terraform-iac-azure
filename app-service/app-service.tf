@@ -8,6 +8,8 @@ resource "azurerm_app_service_plan" "somos_asp" {
   name           = "lideremmin-plan"
   location       = data.azurerm_resource_group.rg.location
   resource_group = data.azurerm_resource_group.rg.name
+  kind           = "Linux"
+  reserved       = true
 
   sku {
     tier = "Standard"

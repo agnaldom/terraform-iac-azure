@@ -23,7 +23,7 @@ resource "azurerm_mysql_server" "mysql" {
   ssl_enforcement              = "Enabled"
 
   tags  = {
-    data-criacao  = "2020-04-16"
+    data-criacao  = "2020-05-19"
     cadeia-valor  = "somos"
     estagio       = "DEV"
     centro-custos = "somos"

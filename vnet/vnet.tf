@@ -5,6 +5,14 @@ resource "azurerm_virtual_network" "somos_net" {
   resource_group_name = azurerm_resource_group.somos_rg.name
   location            = azurerm_resource_group.somos_rg.location
   address_space       = var.address_space
+
+  tags  = {
+    data-criacao  = "2020-05-19"
+    cadeia-valor  = "somos"
+    estagio       = "DEV"
+    centro-custos = "somos"
+    tag-servico   = "lideremmim-vnet"
+  }
 }
 
 resource "azurerm_subnet" "somos_subnet" {
@@ -20,7 +28,11 @@ resource "azurerm_public_ip" "somos_public_ip" {
   resource_group_name = azurerm_resource_group.somos_rg.name
   allocation_method   = "Static"
 
-  tags = {
-    environment = "Somos-Dev"
+  tags  = {
+    data-criacao  = "2020-05-19"
+    cadeia-valor  = "somos"
+    estagio       = "DEV"
+    centro-custos = "somos"
+    tag-servico   = "lideremmim-ip-publico"
   }
 }
